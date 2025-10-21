@@ -43,7 +43,7 @@ export default function Home() {
               size="lg"
               className="font-headline text-2xl h-16 px-8 rounded-none border-2 border-accent text-accent bg-transparent hover:bg-accent hover:text-accent-foreground animate-pulse"
             >
-              Start Game
+              Play
             </Button>
           </div>
         )}
