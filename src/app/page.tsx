@@ -63,9 +63,11 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="absolute bottom-[2%] left-1/2 -translate-x-1/2 text-center text-xs sm:text-sm text-muted-foreground">
-          Use Arrow Keys or W/A/S/D to move
-        </p>
+        <div className="absolute bottom-[17%] left-1/2 -translate-x-1/2 w-[65%] text-center">
+          <p className="text-xs sm:text-sm text-muted-foreground">
+            Use Arrow Keys or W/A/S/D to move
+          </p>
+        </div>
       </div>
     </main>
   );
