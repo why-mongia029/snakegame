@@ -1,5 +1,6 @@
 import type { Position } from "@/lib/dsa";
 import { cn } from "@/lib/utils";
+import { Apple } from "lucide-react";
 
 type GameBoardProps = {
   snakeSegments: Position[];
@@ -26,24 +27,27 @@ export const GameBoard = ({
         <div
           key={index}
           className={cn(
-            "rounded-sm",
+            "transform transition-transform duration-100 ease-in-out",
             index === 0
-              ? "bg-accent shadow-[0_0_8px_theme(colors.accent)]" // Head
-              : "bg-primary" // Body
+              ? "bg-gradient-to-br from-green-400 to-green-600 scale-110 rounded-sm shadow-[0_0_8px_#22c55e]" // Head
+              : "bg-gradient-to-br from-green-500 to-green-700 rounded-md" // Body
           )}
           style={{
             gridColumnStart: segment.x + 1,
             gridRowStart: segment.y + 1,
+            transform: `scale(${1 - (index * 0.02)})`
           }}
         />
       ))}
       <div
-        className="bg-destructive rounded-full shadow-[0_0_10px_theme(colors.destructive)] animate-pulse"
+        className="flex items-center justify-center"
         style={{
           gridColumnStart: foodPosition.x + 1,
           gridRowStart: foodPosition.y + 1,
         }}
-      />
+      >
+        <Apple className="w-full h-full text-red-500 animate-pulse" />
+      </div>
     </div>
   );
 };
