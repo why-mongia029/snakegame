@@ -25,12 +25,17 @@ const getInitialSnake = () => {
 
 export const useSnakeGame = () => {
   const [snake, setSnake] = useState(getInitialSnake());
-  const [foodPosition, setFoodPosition] = useState(() => getRandomPosition(GRID_SIZE, snake.toArray()));
+  const [foodPosition, setFoodPosition] = useState({ x: -1, y: -1 });
   const directionRef = useRef<Direction>("RIGHT");
   const [score, setScore] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
-  const [isGameReady, setIsGameReady] = useState(true);
+  const [isGameReady, setIsGameReady] = useState(false);
+
+  useEffect(() => {
+    setFoodPosition(getRandomPosition(GRID_SIZE, snake.toArray()));
+    setIsGameReady(true);
+  }, []);
 
   const moveSnake = useCallback(() => {
     setSnake((prevSnake) => {
