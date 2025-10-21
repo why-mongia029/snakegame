@@ -32,7 +32,7 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center min-h-screen p-4 overflow-hidden">
       <header className="w-full max-w-2xl text-center mb-4 md:mb-6">
         <h1 className="text-4xl md:text-6xl font-bold text-accent font-headline tracking-widest">
-          RETRO SNAKE
+          Snake Game
         </h1>
         <p className="text-2xl md:text-3xl mt-2 text-primary-foreground">
           Score: {score}
