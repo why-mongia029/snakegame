@@ -102,6 +102,10 @@ export const useSnakeGame = () => {
     const key = e.key;
     const currentDirection = directionRef.current;
 
+    if (["ArrowUp", "w", "ArrowDown", "s", "ArrowLeft", "a", "ArrowRight", "d"].includes(key.toLowerCase())) {
+      e.preventDefault();
+    }
+
     if (key === "ArrowUp" || key.toLowerCase() === "w") {
       if (currentDirection !== "DOWN") directionRef.current = "UP";
     } else if (key === "ArrowDown" || key.toLowerCase() === "s") {
