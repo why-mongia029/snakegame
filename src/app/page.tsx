@@ -38,6 +38,10 @@ export default function Home() {
           Score: {score}
         </p>
       </header>
+      
+      <p className="mb-4 text-center text-muted-foreground">
+        Use Arrow Keys or W/A/S/D to move
+      </p>
 
       <div className="relative w-full max-w-lg lg:max-w-xl aspect-square border-4 border-primary shadow-[0_0_20px_theme(colors.primary)]">
         {isGameOver && (
@@ -60,10 +64,6 @@ export default function Home() {
           gridSize={GRID_SIZE}
         />
       </div>
-
-      <footer className="mt-4 md:mt-6 text-center text-muted-foreground">
-        <p>Use Arrow Keys or W/A/S/D to move</p>
-      </footer>
     </main>
   );
 }
