@@ -36,6 +36,9 @@ export default function Home() {
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-1 text-white">
             Score: {score}
           </p>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-2">
+            Use Arrow Keys or W/A/S/D to move
+          </p>
         </div>
 
         {/* Game Screen Area */}
@@ -64,9 +67,6 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-[17%] left-1/2 -translate-x-1/2 w-[65%] text-center">
-          <p className="text-xs sm:text-sm text-muted-foreground">
-            Use Arrow Keys or W/A/S/D to move
-          </p>
         </div>
       </div>
     </main>
