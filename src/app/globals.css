@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 245 42% 16%; /* Dark Purple */
-    --foreground: 240 100% 95%; /* Light Lavender */
+    --background: 255 50% 12%;
+    --foreground: 255 10% 85%;
 
-    --card: 245 42% 21%;
-    --card-foreground: 240 100% 95%;
+    --card: 255 50% 16%;
+    --card-foreground: 255 10% 85%;
 
-    --popover: 245 42% 21%;
-    --popover-foreground: 240 100% 95%;
+    --popover: 255 50% 16%;
+    --popover-foreground: 255 10% 85%;
 
-    --primary: 320 100% 60%; /* Neon Pink */
-    --primary-foreground: 0 0% 98%;
+    --primary: 135 95% 55%;
+    --primary-foreground: 255 50% 12%;
 
-    --secondary: 245 42% 30%;
+    --secondary: 255 50% 25%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 245 42% 25%;
-    --muted-foreground: 240 100% 80%;
+    --muted: 255 50% 20%;
+    --muted-foreground: 255 10% 70%;
 
-    --accent: 200 100% 60%; /* Neon Blue */
-    --accent-foreground: 245 42% 16%; /* Dark Purple on Neon Blue */
+    --accent: 280 100% 65%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 320 100% 60%; /* Neon Pink */
-    --input: 320 100% 60%;
-    --ring: 200 100% 60%; /* Neon Blue */
+    --border: 135 95% 55%;
+    --input: 135 95% 55%;
+    --ring: 280 100% 65%;
     
     --radius: 0.3rem;
     --chart-1: 12 76% 61%;
@@ -40,33 +40,33 @@
     --chart-5: 27 87% 67%;
   }
   .dark {
-    --background: 245 42% 16%; /* Dark Purple */
-    --foreground: 240 100% 95%; /* Light Lavender */
+    --background: 255 50% 12%;
+    --foreground: 255 10% 85%;
 
-    --card: 245 42% 21%;
-    --card-foreground: 240 100% 95%;
+    --card: 255 50% 16%;
+    --card-foreground: 255 10% 85%;
 
-    --popover: 245 42% 21%;
-    --popover-foreground: 240 100% 95%;
+    --popover: 255 50% 16%;
+    --popover-foreground: 255 10% 85%;
 
-    --primary: 320 100% 60%; /* Neon Pink */
-    --primary-foreground: 0 0% 98%;
+    --primary: 135 95% 55%;
+    --primary-foreground: 255 50% 12%;
 
-    --secondary: 245 42% 30%;
+    --secondary: 255 50% 25%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 245 42% 25%;
-    --muted-foreground: 240 100% 80%;
+    --muted: 255 50% 20%;
+    --muted-foreground: 255 10% 70%;
 
-    --accent: 200 100% 60%; /* Neon Blue */
-    --accent-foreground: 245 42% 16%; /* Dark Purple on Neon Blue */
+    --accent: 280 100% 65%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 320 100% 60%; /* Neon Pink */
-    --input: 320 100% 60%;
-    --ring: 200 100% 60%; /* Neon Blue */
+    --border: 135 95% 55%;
+    --input: 135 95% 55%;
+    --ring: 280 100% 65%;
     
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -82,21 +82,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: url("https://www.transparenttextures.com/patterns/lined-paper.png"),
-      radial-gradient(
-        circle at 10% 20%,
-        hsla(320, 100%, 60%, 0.1),
-        transparent 25%
-      ),
-      radial-gradient(
-        circle at 90% 80%,
-        hsla(200, 100%, 60%, 0.1),
-        transparent 25%
-      ),
-      radial-gradient(
-        circle at 50% 50%,
-        hsla(60, 100%, 70%, 0.05),
-        transparent 20%
-      );
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(at 0% 0%, hsla(280, 100%, 65%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(135, 95%, 55%, 0.15) 0px, transparent 50%);
   }
 }
