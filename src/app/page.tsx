@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { GameBoard } from "@/components/game-board";
 import { GameOverScreen } from "@/components/game-over-screen";
@@ -20,30 +19,21 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-4 overflow-hidden">
-      <div className="relative w-full max-w-[600px] md:max-w-[700px] lg:max-w-[800px] aspect-[4/5]">
-        <Image
-          src="https://storage.googleapis.com/project-spark-348519-2dcc2.appspot.com/a8837269-a2a9-4676-a077-8c2014a22606.webp"
-          alt="Arcade Machine"
-          fill
-          priority
-          className="object-contain pointer-events-none"
-        />
-
-        <div className="absolute top-[16.5%] left-1/2 -translate-x-1/2 w-[65%] h-[12%] flex flex-col items-center justify-center text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white font-headline tracking-widest uppercase">
+      <div className="w-full max-w-xl flex flex-col items-center gap-4">
+        <div className="text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white font-headline tracking-widest uppercase">
             Snake Game
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-1 text-white">
+          <p className="text-xl sm:text-2xl md:text-3xl mt-2 text-white">
             Score: {score}
           </p>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-2">
+          <p className="text-sm text-muted-foreground mt-2">
             Use Arrow Keys or W/A/S/D to move
           </p>
         </div>
 
-        {/* Game Screen Area */}
-        <div className="absolute top-[31%] left-1/2 -translate-x-1/2 w-[59%] aspect-square">
-          <div className="relative w-full h-full bg-card/30 rounded-[4%] overflow-hidden">
+        <div className="w-full aspect-square max-w-[500px]">
+          <div className="relative w-full h-full bg-card/30 rounded-lg overflow-hidden border-2 border-primary/50 shadow-2xl shadow-primary/20">
             {isGameOver && (
               <GameOverScreen score={score} onRestart={startGame} />
             )}
@@ -64,9 +54,6 @@ export default function Home() {
               gridSize={GRID_SIZE}
             />
           </div>
-        </div>
-
-        <div className="absolute bottom-[17%] left-1/2 -translate-x-1/2 w-[65%] text-center">
         </div>
       </div>
     </main>
