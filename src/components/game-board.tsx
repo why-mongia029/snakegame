@@ -19,7 +19,7 @@ export const GameBoard = ({
 
   return (
     <div
-      className="w-full h-full grid bg-background"
+      className="w-full h-full grid bg-card/50"
       style={gridStyle}
     >
       {snakeSegments.map((segment, index) => (

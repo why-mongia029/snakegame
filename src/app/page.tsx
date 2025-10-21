@@ -5,7 +5,6 @@ import { GameBoard } from "@/components/game-board";
 import { GameOverScreen } from "@/components/game-over-screen";
 import { useSnakeGame } from "@/hooks/use-snake-game";
 import { GRID_SIZE } from "@/lib/constants";
-import { useEffect, useState } from "react";
 
 export default function Home() {
   const {
@@ -17,16 +16,6 @@ export default function Home() {
     startGame,
     isGameReady,
   } = useSnakeGame();
-
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return null;
-  }
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-4 overflow-hidden">
@@ -43,7 +32,7 @@ export default function Home() {
         Use Arrow Keys or W/A/S/D to move
       </p>
 
-      <div className="relative w-full max-w-lg lg:max-w-xl aspect-square border-4 border-primary shadow-[0_0_20px_theme(colors.primary)]">
+      <div className="relative w-full max-w-lg lg:max-w-xl aspect-square border-4 border-primary shadow-[0_0_20px_theme(colors.primary)] bg-card/30 backdrop-blur-sm">
         {isGameOver && (
           <GameOverScreen score={score} onRestart={startGame} />
         )}
